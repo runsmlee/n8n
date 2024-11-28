@@ -13,6 +13,11 @@ LABEL org.opencontainers.image.version=${N8N_VERSION}
 ENV N8N_VERSION=${N8N_VERSION}
 ENV NODE_ENV=production
 ENV N8N_RELEASE_TYPE=stable
+
+# Install GraphicsMagick
+RUN apt-get update && apt-get install -y graphicsmagick && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+		
 RUN set -eux; \
 	npm install -g --omit=dev n8n@${N8N_VERSION} --ignore-scripts && \
 	npm rebuild --prefix=/usr/local/lib/node_modules/n8n sqlite3 && \
