@@ -1,3 +1,5 @@
+RUN echo "Building from docker/images/n8n/Dockerfile"
+
 ARG NODE_VERSION=20
 FROM n8nio/base:${NODE_VERSION}
 
