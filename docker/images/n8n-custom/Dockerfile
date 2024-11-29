@@ -1,4 +1,4 @@
-RUN echo "Building from docker/images/n8n/Dockerfile"
+RUN echo "Building from docker/images/n8n-custom/Dockerfile"
 
 ARG NODE_VERSION=20
 
